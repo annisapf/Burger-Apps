@@ -4,6 +4,7 @@ const burger = require("../models/burger");
 
 router.get("/", function (req, res) {
     burger.all(function (data) {
+        console.log(data);
         var hbsObject = {
             burgers: data
         };
@@ -13,10 +14,11 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
+    console.log("post pusing " + req.body.burger_name)
     burger.create([
-        "burger_name", "devour"
+        "burger_name",
     ], [
-        req.body.burger_name, req.body.devour
+        req.body.burger_name,
     ], function (result) {
         res.json({ id: result.insertId });
     });
