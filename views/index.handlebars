@@ -1,3 +1,128 @@
-<h1>Burgers!</h1>
+<header>
 
-<h2>Let's eat some burgers!</h2>
+    <div id="intro-section" class="view">
+
+        <div class="mask d-flex justify-content-center align-items-center">
+
+            <div class="container px-md-3 px-sm-0">
+
+                <div class="row wow fadeIn">
+
+                    <div class="col-md-12 mb-4 white-text text-center">
+                        <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">Eat-Da-Burger</h3>
+                        <hr class="hr-light my-4 w-75">
+                        <h4 class="subtext-header mt-2 mb-4">Coolest Burger Apps</h4>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+<main>
+
+    <section id="burgers" class="py-5">
+
+
+        <div class="container">
+
+
+            <div class="row row-content align-items-center">
+
+                <div class="col-sm col-md flex-first">
+
+                    <div class="image-wrapper">
+
+                        <img class="mx-auto d-block" src="/assets/img/burger.jpg" width="300" alt="Burger" />
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="row row-content align-items-center">
+
+                <div class="col-md-6 col-md-offset-6" style="margin:auto">
+                    <div class="card mx-2 mt-4 shadow">
+                        <div class="card-body">
+                            <h2 class="card-title">Let's Create a Burger!</h2>
+
+                            <form class="create-form">
+
+                                <div class="form-group">
+                                    <label for="burge">What Burger Do You Want?</label>
+                                    <input class="form-control" type="text" id="burge" name="name"
+                                        placeholder="Super Spicy Jalapeno Chicken Haloumi Burger">
+                                </div>
+
+                                <button type="submit" class="btn mt-3 mx-2 center"
+                                    style="background-color:#f48c06; color:whitesmoke">Create a
+                                    Burger</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="d-md-flex justify-content-between burger-list">
+                <div class="mb-3 py-5">
+                    <div class="card m-2 p-3 h-100 shadow">
+                        <h2>Let's Devour a Burger!</h2>
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#unless devour}}
+                            {{> burgers/burger-block devour=false}}
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-5 p-5">
+
+                    <button type="submit" class="btn mb-3 center"
+                        style="background-color:#f48c06; color:whitesmoke;width:80px; height:40px">Devour</button>
+
+                </div>
+
+
+                <div class=" mb-3 py-5">
+                    <div class="card m-2 p-3 h-100 shadow">
+                        <h2>These burgers are devoured</h2>
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#if devour}}
+                            {{> burgers/burger-block devour=true}}
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+</main>

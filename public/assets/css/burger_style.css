@@ -1,0 +1,37 @@
+
+
+header {
+    color: whitesmoke;
+    background-color: #9d0208;
+}
+
+
+img {
+    border-radius: 60%; 
+}
+
+button {
+    color: #e85d04;
+}
+
+
+
+ul.list-group:after {
+    clear: both;
+    display: block;
+    content: "";
+  }
+
+  .list-group-item {
+    float: left;
+    border: 0 !important;
+    margin: 0px;
+    padding: 10px 0px;
+}
+
+
+@media screen and (max-width: 400px) and (max-width: 992px) {
+    header {
+        background: #9d0208 !important;
+    }
+}
