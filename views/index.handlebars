@@ -90,19 +90,28 @@
                         <ul class="list-group">
                             {{#each burgers}}
                             {{#unless devour}}
-                            {{> burgers/burger-block devour=false}}
+                            <li class="col-xs-3 list-group-item">
+                                <div class="row">
+
+                                    <img src="/assets/img/burger.png" width="35px" height="30px">
+                                    <p class="ml-3">{{burger_name}}</p>
+
+                                    <div class="col float-right">
+                                        <button class="btn change-devour ml-3 float-right"
+                                            style="background-color:#f48c06; color:whitesmoke;" data-id="{{id}}"
+                                            data-newdevour="{{devour}}">
+                                            Devour
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </li>
                             {{/unless}}
                             {{/each}}
                         </ul>
                     </div>
                 </div>
 
-                <div class="mb-5 p-5">
-
-                    <button type="submit" class="btn mb-3 center"
-                        style="background-color:#f48c06; color:whitesmoke;width:80px; height:40px">Devour</button>
-
-                </div>
 
 
                 <div class=" mb-3 py-5">
@@ -111,7 +120,12 @@
                         <ul class="list-group">
                             {{#each burgers}}
                             {{#if devour}}
-                            {{> burgers/burger-block devour=true}}
+                            <li class="col-xs-3 list-group-item">
+                                <div class="row">
+                                    <img src="/assets/img/burger.png" width="35px" height="30px">
+                                    <p class="ml-3">{{burger_name}}</p>
+                                </div>
+                            </li>
                             {{/if}}
                             {{/each}}
                         </ul>
