@@ -4,11 +4,12 @@ $(function () {
         var id = $(this).data("id");
         console.log("id", id);
         var newdevour = $(this).data("newdevour");
+        var favorite = $(this).data("favorite");
         console.log("newdevour", newdevour);
 
         var newDevourState = {
             devour: newdevour,
-
+            favorite: favorite,
         };
         console.log("newDevourState", newDevourState);
         // Send the PUT request.
@@ -24,13 +25,40 @@ $(function () {
         );
     });
 
+
+    $(".change-favorite").on("click", function (event) {
+        var id = $(this).data("id");
+        console.log("id", id);
+        var devour = $(this).data("devour");
+        var newfavorite = $(this).data("newfavorite");
+        console.log("newfavourite", newfavorite);
+
+        var newfavoriteState = {
+            devour: devour,
+            favorite: newfavorite,
+
+        };
+        console.log("newfavoriteState", newfavoriteState);
+        // Send the PUT request.
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: newfavoriteState
+        }).then(
+            function () {
+                console.log("changed favorite to", newfavorite);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
     $(".create-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
         console.log("user_select_burger")
         var newBurger = {
             burger_name: $("#user_select_burger").val().trim(),
-            //devour: $("[burger_name=devour]:checked").val().trim()
+
         };
         console.log(newBurger);
 

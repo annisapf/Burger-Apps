@@ -86,7 +86,7 @@
             <div class="d-md-flex justify-content-between burger-list">
                 <div class="mb-3 py-5">
                     <div class="card m-2 p-3 h-100 shadow">
-                        <h2>Let's Devour a Burger!</h2>
+                        <h2>Let's Devour!</h2>
                         <ul class="list-group">
                             {{#each burgers}}
                             {{#unless devour}}
@@ -99,7 +99,7 @@
                                     <div class="col float-right">
                                         <button class="btn change-devour ml-3 float-right"
                                             style="background-color:#f48c06; color:whitesmoke;" data-id="{{id}}"
-                                            data-newdevour="1">
+                                            data-newdevour="1" data-favorite="0">
                                             Devour
                                         </button>
                                     </div>
@@ -116,10 +116,38 @@
 
                 <div class=" mb-3 py-5">
                     <div class="card m-2 p-3 h-100 shadow">
-                        <h2>These burgers are devoured</h2>
+                        <h2>Devoured Burgers</h2>
                         <ul class="list-group">
                             {{#each burgers}}
                             {{#if devour}}
+                            <li class="col-xs-3 list-group-item">
+                                <div class="row">
+                                    <img src="/assets/img/burger.png" width="35px" height="30px">
+                                    <p class="ml-3">{{burger_name}}</p>
+
+                                    <div class="col float-right">
+                                        <button class="btn change-favorite ml-3 float-right"
+                                            style="background-color:#f48c06; color:whitesmoke;" data-id="{{id}}"
+                                            data-devour="{{devour}}" data-newfavorite="1">
+                                            Favourite
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class=" mb-3 py-5">
+                    <div class="card m-2 p-3 h-100 shadow">
+                        <h2>My Favorites <i class="fas fa-heart" style="color:red"></i><i class="fas fa-heart"
+                                style="color:red"></i></h2>
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#if favorite}}
                             <li class="col-xs-3 list-group-item">
                                 <div class="row">
                                     <img src="/assets/img/burger.png" width="35px" height="30px">

@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name, devour)
-VALUES ("Jalapeno Burger", true);
-VALUES ("Cheese Burger", true);
+INSERT INTO burgers (burger_name, devour, favorite)
+VALUES ("Jalapeno Burger", true, true);
+VALUES ("Cheese Burger", true, true);
