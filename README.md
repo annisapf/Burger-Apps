@@ -101,9 +101,9 @@ The license is MIT standard license.
 It is an open project and everyone can contribute - please send an email requesting to be added as a contributor
 
 ## Link to the App
-<a href="https://agile-shore-12051.herokuapp.com//">The URLs of the deployed applications in Heroku</a><hr>
+<a href="https://agile-shore-12051.herokuapp.com">The URLs of the deployed applications in Heroku</a><hr>
 
-<a href="http://burgers.annisapurbandari.com">The URLs of the deployed applications in Annisa Website</a><hr>
+<a href="http://burger.annisapurbandari.com">The URLs of the deployed applications in Annisa Website</a><hr>
 
      
 ## Questions
